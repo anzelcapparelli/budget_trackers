@@ -7,6 +7,8 @@
 
   ### Launch page:
   ![launch page](public/images/launch_page_web.png)
+
+  ### PWA:
   ![launch page pwa](public/images/launch_page_pwa.png)
 
   ## Table of contents
@@ -15,7 +17,6 @@
   - [Description](#Descriptionn)
   - [Installation](#Installation)
   - [Usage](#Usage)
-  - [Contributing](#Contributing)
   - [Testing](#Testing)
   - [License](#License)
   - [Questions?](#Questions?)
