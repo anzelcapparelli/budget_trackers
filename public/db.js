@@ -39,6 +39,7 @@ function checkDatabase() {
   const store = transaction.objectStore("pending");
   // get all records from store and set to a variable
   const getAll = store.getAll();
+  console.log(getAll.result);
 
   getAll.onsuccess = function() {
     if (getAll.result.length > 0) {
@@ -50,7 +51,9 @@ function checkDatabase() {
           "Content-Type": "application/json"
         }
       })
-      .then(response => response.json())
+      .then(response => {    
+        return response.json();
+      })
       .then(() => {
         // if successful, open a transaction on your pending db
         const transaction = db.transaction(["pending"], "readwrite");
@@ -60,7 +63,8 @@ function checkDatabase() {
 
         // clear all items in your store
         store.clear();
-      });
+      })
+      .catch(err=> console.error(err));
     }
   };
 }
